@@ -28,6 +28,7 @@ ion-icon {
 }
 .dropdown-container {
   position: relative;
+
   /* background-color: #fff; */
   width: 250px;
   text-align: left;
@@ -66,13 +67,14 @@ ion-icon {
 .option-container {
   margin-top: 1.5rem;
   background-color: var(--white);
+  /* background-color: red; */
   border-radius: 10px;
   /* display: none; */
   /* Instead of display property
     use opacity property , so that animation can be added
     */
   height:200px;
-  overflow: scroll;
+  overflow-y: scroll;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
   box-shadow: 2px 2px 15px 10px #ccc;
@@ -91,3 +93,4 @@ ion-icon {
 ::-webkit-scrollbar {
     width: 1px;
   }
+  

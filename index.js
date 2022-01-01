@@ -2,10 +2,17 @@
 function openOption (){
     // document.querySelector('.option-container').style.height="auto";
     let element = document.querySelector('.option-container');
-    element.style.opacity=1;
+    
       // Add Active class so that dropdown-icon can be changed using css
      let toggleActive =document.querySelector('.dropdown-selected');
-     toggleActive.classList.add('active');
+     toggleActive.classList.toggle('active');
+     //Open or close the dropdown menu
+     if(toggleActive.classList.contains('active')){
+        //  alert("yes");
+         element.style.opacity=1;
+     }else{
+        element.style.opacity=0;
+     }
 }
 
 // Set selected menu value
