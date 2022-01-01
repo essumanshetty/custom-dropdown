@@ -1,5 +1,93 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+:root {
+  --white: #fff;
+  --background: #f1f1f1;
+  --selected-color: #7ca8f0;
+}
+body {
+  background-color: var(--background);
+}
+h2 {
+    margin: 2rem 0 ;
+    width: 500px !important;
+    text-align: center;
+}
+ion-icon {
+    padding: 0 10px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.dropdown-container {
+  position: relative;
+  /* background-color: #fff; */
+  width: 250px;
+  text-align: left;
+  border-radius: 10px;
+  font-size: 1.3rem;
+ 
+}
+.dropdown-selected {
+  padding: 1rem;
+  background-color: var(--selected-color);
+  border-radius: 10px;
+  color: var(--white);
+  box-shadow: 2px 2px 15px 10px #ccc;
+}
+.dropdown-selected:hover{
+    cursor: pointer;
+}
+.dropdown-selected::after {
+  content: "";
+  border: 2px solid var(--white);
+  width: 10px;
+  height: 10px;
+  /* Make position:absolute , else it appears as straight line */
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  border-top: 1px solid transparent;
+  border-right: 1px solid transparent;
+  transform: rotate(-45deg);
+  transition:transform 0.4s ease-in-out;
+}
+.dropdown-selected.active::after {
+  transform: rotate(135deg);
+  top:25px;
+}
+.option-container {
+  margin-top: 1.5rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  /* display: none; */
+  /* Instead of display property
+    use opacity property , so that animation can be added
+    */
+  height:200px;
+  overflow: scroll;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  box-shadow: 2px 2px 15px 10px #ccc;
+}
+
+.option-container .dropdown-option {
+  padding: 0.9rem;
+  border-radius: 10px;
+}
+.option-container .dropdown-option:hover {
+  cursor: pointer;
+  background-color: var(--selected-color);
+  color: var(--white);
+}
+/* Override default scrollbar */
+::-webkit-scrollbar {
+    width: 1px;
+  }
